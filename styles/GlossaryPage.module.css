@@ -1,0 +1,108 @@
+.app {
+    --body-bg-color: #fff;
+    --body-font: "Apple SD 산돌고딕 Neo", "Apple SD Sandol Gothic Neo", "AppleGothic";
+    background-color: var(--body-bg-color);
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    max-width: 100%;
+    min-height: 100vh;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--body-font);
+}
+
+.header {
+    height: 10vh;
+    width: 100%;
+    transition: box-shadow 0.3s;
+    display: flex;
+    box-shadow: 0 4px 20px rgba(88, 99, 148, 0.17);
+    align-items: center;
+    flex-direction: row;
+    position: sticky;
+    top: 0;
+    padding: 0 25px;
+    z-index: 1000;
+}
+
+.header a {
+    display: contents;
+}
+
+/* .header a:hover {
+    cursor: pointer;
+} */
+
+.logo {
+    height: 5vmin;
+    margin-right: 20px;
+}
+
+.title {
+    font-size: calc(4.5vmin);
+    color: #757575;
+}
+
+.main {
+    display: flex;
+    flex: 1 1 auto;
+    color: Black;
+    padding-block: 1.5rem;
+    padding-inline: 1.5rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-inline-start: 3rem;
+    max-inline-size: 50%;
+}
+
+.glossary {
+    background-color: #F5F5F7;
+    border-radius: 18px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 2rem 3rem;
+    min-height: 20vh;
+}
+
+.glossary h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-block-end: 1rem;
+}
+
+.glossary p {
+    font-size: 16px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.navigation {
+    background-color: rgba(165, 161, 161, 0.445);
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 0.25rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    cursor: pointer;
+    border-width: 1px;
+    border-color: #F5F5F7;
+    color: grey;
+}
+
+.navigationContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.col4 {
+    flex-grow: 4;
+}
