@@ -1,18 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from "../styles/GlossaryPage.module.css";
 
+async function getData(url: string): Promise<any> {
+    const res = await fetch(url)
+
+    if (!res.ok) {
+        throw new Error('Failed to fetch data')
+    }
+
+    return res.json();
+}
+
 const GlossaryItem: React.FC = () => {
-    const items = Array.from({ length: 5 }, (_, index) => ({
-        title: `Title ${index + 1}`,
-        description: `Description for item ${index + 1}. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
-    }));
+    const [glossaryList, setGlossaryList] = useState<any[]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const data = await getData('https://25547bcc-a8a7-412f-badd-977ce6c1732f.mock.pstmn.io/api/glossary');
+                setGlossaryList(data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     return (
         <div className={styles.container}>
-            {items.map((item, index) => (
+            {glossaryList.map((glossary, index) => (
                 <div key={index} className={styles.glossary}>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
+                    <h3>{glossary.koreanName} {glossary.englishName}</h3>
+                    <p>{glossary.definition}</p>
                 </div>
             ))}
         </div>
