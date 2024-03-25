@@ -13,26 +13,23 @@
 }
 
 .header {
-    height: 10vh;
+    height: 8vh;
     width: 100%;
-    transition: box-shadow 0.3s;
     display: flex;
     box-shadow: 0 4px 20px rgba(88, 99, 148, 0.17);
     align-items: center;
-    flex-direction: row;
     position: sticky;
     top: 0;
     padding: 0 25px;
     z-index: 1000;
+    background-color: var(--header-background-color);
+    justify-content: space-between;
 }
 
 .header a {
-    display: contents;
+    display: flex;
+    align-items: center;
 }
-
-/* .header a:hover {
-    cursor: pointer;
-} */
 
 .logo {
     height: 5vmin;
@@ -41,7 +38,8 @@
 
 .title {
     font-size: calc(4.5vmin);
-    color: #757575;
+    color: var(----foreground-rgb);
+    /* color: #757575; */
 }
 
 .main {
@@ -66,9 +64,16 @@
     box-sizing: border-box;
     border: 1px solid transparent;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    padding: 2rem 3rem;
+    padding: 1.5rem 2rem;
     min-height: 20vh;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    transition: all 0.5s ease;
 }
+
+.glossary:hover {
+    cursor: pointer;
+    transform: translatey(-10px);
+  }
 
 .glossary h3 {
     font-size: 20px;
@@ -77,14 +82,14 @@
 }
 
 .glossary p {
-    font-size: 16px;
+    font-size: 13px;
     overflow-wrap: break-word;
     word-wrap: break-word;
 }
 
 .navigation {
-    background-color: rgba(165, 161, 161, 0.445);
-    font-weight: 700;
+    background-color: #fff;
+    font-weight: 800;
     font-size: 13px;
     border-radius: 0.25rem;
     width: 1.75rem;
@@ -93,6 +98,11 @@
     border-width: 1px;
     border-color: #F5F5F7;
     color: grey;
+}
+
+.navigation:hover {
+    background-color: black;
+    color: #F5F5F7;
 }
 
 .navigationContainer {
@@ -105,4 +115,9 @@
 
 .col4 {
     flex-grow: 4;
+}
+
+.mx1 {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
 }
