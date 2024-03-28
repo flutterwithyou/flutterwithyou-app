@@ -17,7 +17,9 @@ const GlossaryItem: React.FC = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await getData('https://25547bcc-a8a7-412f-badd-977ce6c1732f.mock.pstmn.io/api/glossary');
+                let data = await getData('https://25547bcc-a8a7-412f-badd-977ce6c1732f.mock.pstmn.io/api/glossary');
+                const duplicatedData = Array.from({ length: 5 }, () => JSON.parse(JSON.stringify(data)));
+                data = data.concat(...duplicatedData);
                 setGlossaryList(data);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -31,7 +33,9 @@ const GlossaryItem: React.FC = () => {
         <div className={styles.container}>
             {glossaryList.map((glossary, index) => (
                 <div key={index} className={styles.glossary}>
-                    <h3>{glossary.koreanName} {glossary.englishName}</h3>
+                    <div className={styles.row}>
+                    <h3>{glossary.koreanName} {glossary.englishName}</h3> <span className={styles.category}>{glossary.category}</span>
+                    </div>
                     <p>{glossary.definition}</p>
                 </div>
             ))}

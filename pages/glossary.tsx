@@ -4,17 +4,16 @@ import NavButton from "@/components/NavButton"
 import GlossaryItem from "@/components/GlossaryItem"
 import styles from "@/styles/GlossaryPage.module.css";
 const GlossaryPage: NextPage = () => {
-    const versions = ['en', 'ko', 'num'];
 
 
     return <div className={styles.app}>
         <Header />
         <main className={styles.main}>
-            {versions.map(version => (
-                <NavButton key={version} version={version} onItemClick={function (alphabet: string): void {
+            <div className={styles.w10}>
+                <NavButton onItemClick={function (alphabet: string): void {
                     throw new Error("Function not implemented.")
                 }} />
-            ))}
+            </div>
             <GlossaryItem />
             <div className={styles.col4}></div>
         </main>

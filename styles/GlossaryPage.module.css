@@ -18,7 +18,7 @@
     display: flex;
     box-shadow: 0 4px 20px rgba(88, 99, 148, 0.17);
     align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0;
     padding: 0 25px;
     z-index: 1000;
@@ -54,19 +54,19 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-inline-start: 3rem;
+    /* margin-inline-start: 3rem; */
+    margin-block-start: 8vh;
     max-inline-size: 50%;
 }
 
 .glossary {
-    background-color: #F5F5F7;
-    border-radius: 18px;
+    border-radius: 6px;
     box-sizing: border-box;
     border: 1px solid transparent;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     padding: 1.5rem 2rem;
     min-height: 20vh;
-    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    background-color: rgba(247, 247, 247, 1);
     transition: all 0.5s ease;
 }
 
@@ -76,13 +76,28 @@
   }
 
 .glossary h3 {
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 600;
+    display: inline-block;
+}
+.glossary .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     margin-block-end: 1rem;
+    justify-content: space-between;
+}
+.glossary .category {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem;
+    background-color: #fff;
+    border-radius: 5px;
+    color:rgba(223, 223, 223, 1);
 }
 
 .glossary p {
-    font-size: 13px;
+    font-size: 15px;
     overflow-wrap: break-word;
     word-wrap: break-word;
 }
@@ -96,8 +111,9 @@
     height: 1.75rem;
     cursor: pointer;
     border-width: 1px;
-    border-color: #F5F5F7;
-    color: grey;
+    border-color: rgba(223, 223, 223, 1);
+    box-shadow: -2px -3px 5px rgba(223, 223, 223, 1);
+    color: rgba(223, 223, 223, 1);
 }
 
 .navigation:hover {
@@ -105,12 +121,29 @@
     color: #F5F5F7;
 }
 
-.navigationContainer {
+/* .navigationContainer {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     align-items: center;
     margin-right: 1rem;
+} */
+
+.navigationContainer {
+    display: flex;
+    gap: 0.5rem;
+    align-items: sticky;
+    /* margin-right: 1rem; */
+    position: fixed;
+    top: 25%; /* 초기 위치 */
+    left: 1.5rem; /* 초기 위치 */
+    z-index: 1000;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
 .col4 {
@@ -120,4 +153,8 @@
 .mx1 {
     margin-right: 0.5rem;
     margin-left: 0.5rem;
+}
+
+.w10 {
+    width: 10rem;
 }
