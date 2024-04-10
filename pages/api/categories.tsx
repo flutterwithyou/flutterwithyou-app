@@ -13,6 +13,12 @@ export default async function fetchCategoriesData (req: NextApiRequest, res: Nex
         res.json(categories);
         
         client.close();
+
+        return {
+            categories: categories.map((categories) => {
+                _id: categories._id.toString()
+            })
+        }
     } catch (e) {
         console.error(e);
     }

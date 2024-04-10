@@ -1,7 +1,7 @@
 import { MongoClient } from 'mongodb';
-import { NextApiRequest, NextApiResponse } from 'next';
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+
+export default async function fetchGlossariesFromDb () {
     try {
         const client = await MongoClient.connect('mongodb+srv://kjiwon411:HD4L97kJlB7OPWpU@cluster0.jlvxmnz.mongodb.net/fluttewithyou_flutterGlossaries?retryWrites=true&w=majority');
         const db = client.db("fluttewithyou_flutterGlossaries");
@@ -9,11 +9,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             .collection("glossaries")
             .find({})
             .toArray();
-        res.json(glossaries);
 
         client.close();
-
+        
+        return glossaries.map;
+        
     } catch (e) {
         console.error(e);
     }
+
 }
