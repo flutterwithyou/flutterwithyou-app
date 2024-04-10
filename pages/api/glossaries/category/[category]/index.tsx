@@ -1,9 +1,10 @@
 import { MongoClient } from "mongodb";
 import { NextApiRequest, NextApiResponse } from 'next';
 
-export default async function handler ({ params, res, req }: { params: { categoryEnglishName: string }, req: NextApiRequest, res: NextApiResponse }) {
+export default async function handler (  req: NextApiRequest, res: NextApiResponse ) {
     try {
-        if (req.method == 'GET') {const category = params.categoryEnglishName;
+        if (req.method == 'GET') {
+        const {category} = req.query;
         const client = await MongoClient.connect('mongodb+srv://kjiwon411:HD4L97kJlB7OPWpU@cluster0.jlvxmnz.mongodb.net/fluttewithyou_flutterGlossaries?retryWrites=true&w=majority');
         const db = client.db("fluttewithyou_flutterGlossaries");
         const glossaries = await db
@@ -14,11 +15,7 @@ export default async function handler ({ params, res, req }: { params: { categor
 
         client.close();
         
-        return {
-            glossaries: glossaries.map((glossaries) => {
-                _id: glossaries._id.toString()
-            })
-        }} else {
+       } else {
             return res.status(405).end();
         }
         
