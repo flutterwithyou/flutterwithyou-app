@@ -1,4 +1,3 @@
-import { Glossary } from "./definitions";
 import * as Hangul from 'hangul-js';
 
 // Transform glossaries data which are from 'api/glossaries/all'

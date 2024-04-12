@@ -1,4 +1,4 @@
-// mongodb.js
+// mongodb.js 설정 파일
 
 import { MongoClient } from 'mongodb'
 
