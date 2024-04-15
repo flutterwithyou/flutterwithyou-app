@@ -13,6 +13,6 @@ export type Glossary = {
 
 export type Category = {
     id: string,
-    koreanName: string,
-    englishName: string
+    koreanTitle: string,
+    category: string
 }
