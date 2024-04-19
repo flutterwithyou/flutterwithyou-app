@@ -59,7 +59,19 @@
     max-inline-size: 50%;
 }
 
+.container .label {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem;
+    background-color: #F5F5F7;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    color:rgb(0, 0, 0);
+    margin-bottom: 50px;
+}
+
 .glossary {
+    margin-top: 15px;
     border-radius: 6px;
     box-sizing: border-box;
     border: 1px solid transparent;
