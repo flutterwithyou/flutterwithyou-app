@@ -1,3 +1,19 @@
+/**
+ * @swagger
+ * /api/glossaries:
+ *   get:
+ *     description: Returns all glossaries
+ *     responses:
+ *       200:
+ *         description: All glossaries, sorted by its first initial alphabet
+ *      405: 
+ *         description: Methods not allowed. 
+ *      500:
+ *         description: Internal server error
+ */
+
+
+
 // 엔드포인트가 glossaries/all 
 
 import { Glossary } from '@/pages/lib/definitions';

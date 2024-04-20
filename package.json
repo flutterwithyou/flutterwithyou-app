@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
     "hangul-js": "^0.2.6",
     "mongodb": "^6.5.0",
     "next": "14.1.3",
