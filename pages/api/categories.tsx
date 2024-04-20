@@ -1,3 +1,17 @@
+/**
+ * @swagger
+ * /api/categories:
+ *   get:
+ *     description: 모든 카테고리들을 반환합니다.
+ *     responses:
+ *       200:
+ *         description: 모든 카테고리 데이터를 반환합니다. 
+ *       405:
+ *          description: 잘못된 방법으로 접근
+ *       500: 
+ *          description: 내부 서버 에러 발생으로 인한 접근 거부
+ */
+
 import { MongoClient } from 'mongodb';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Category } from '../lib/definitions';

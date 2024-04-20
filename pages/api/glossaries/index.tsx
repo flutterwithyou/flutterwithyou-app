@@ -1,4 +1,20 @@
+/**
+ * @swagger
+ * /api/glossaries:
+ *   get:
+ *     description: 모든 용어들을 반환합니다.
+ *     responses:
+ *       200:
+ *         description: 초성을 기준으로 정렬된 모든 용어들을 반환합니다.
+ *       405:
+ *          description: 잘못된 방법으로 접근
+ *       500: 
+ *          description: 내부 서버 에러 발생으로 인한 접근 거부
+ */
+
+
 // 엔드포인트가 glossaries/all 
+
 
 import { Glossary } from '@/pages/lib/definitions';
 import { findInitialChar } from '@/pages/lib/utils';
