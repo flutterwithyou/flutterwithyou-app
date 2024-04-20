@@ -5,6 +5,8 @@ import { findInitialChar } from '@/pages/lib/utils';
 import { MongoClient, WithId } from 'mongodb';
 import { NextApiRequest, NextApiResponse } from 'next';
 
+
+
 export default async function handler (req: NextApiRequest, res: NextApiResponse) {
    let dict = new Map<string, Glossary[]> ();
     try {
