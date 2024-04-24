@@ -19,6 +19,7 @@ const GlossaryPage: NextPage = () => {
     const [glossaryData, setGlossaryData] = useState<any>({});
     const [labels, setLabels] = useState<string[]>([]);
     const glossaryRef = useRef<HTMLDivElement | null>(null);
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -32,6 +33,7 @@ const GlossaryPage: NextPage = () => {
         };
 
         fetchData();
+        
     }, []);
 
     const handleItemClick = (alphabet: string) => {
