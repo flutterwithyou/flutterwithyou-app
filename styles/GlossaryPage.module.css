@@ -1,0 +1,172 @@
+.app {
+    --body-bg-color: #fff;
+    --body-font: "Apple SD 산돌고딕 Neo", "Apple SD Sandol Gothic Neo", "AppleGothic";
+    background-color: var(--body-bg-color);
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    max-width: 100%;
+    min-height: 100vh;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--body-font);
+}
+
+.header {
+    height: 8vh;
+    width: 100%;
+    display: flex;
+    box-shadow: 0 4px 20px rgba(88, 99, 148, 0.17);
+    align-items: center;
+    position: fixed;
+    top: 0;
+    padding: 0 25px;
+    z-index: 1000;
+    background-color: var(--header-background-color);
+    justify-content: space-between;
+}
+
+.header a {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 5vmin;
+    margin-right: 20px;
+}
+
+.title {
+    font-size: calc(4.5vmin);
+    color: var(----foreground-rgb);
+    /* color: #757575; */
+}
+
+.main {
+    display: flex;
+    flex: 1 1 auto;
+    color: Black;
+    padding-block: 1.5rem;
+    padding-inline: 1.5rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* margin-inline-start: 3rem; */
+    margin-block-start: 8vh;
+    max-inline-size: 50%;
+}
+
+.container .label {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem;
+    background-color: #F5F5F7;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    color:rgb(0, 0, 0);
+    margin-bottom: 50px;
+}
+
+.glossary {
+    margin-top: 15px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 2rem;
+    min-height: 20vh;
+    background-color: rgba(247, 247, 247, 1);
+    transition: all 0.5s ease;
+}
+
+.glossary:hover {
+    cursor: pointer;
+    transform: translatey(-10px);
+  }
+
+.glossary h3 {
+    font-size: 23px;
+    font-weight: 600;
+    display: inline-block;
+}
+.glossary .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-block-end: 1rem;
+    justify-content: space-between;
+}
+.glossary .category {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem;
+    background-color: #fff;
+    border-radius: 5px;
+    color:rgba(223, 223, 223, 1);
+}
+
+.glossary p {
+    font-size: 15px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.navigation {
+    background-color: #fff;
+    font-weight: 800;
+    font-size: 13px;
+    border-radius: 0.25rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    cursor: pointer;
+    border-width: 1px;
+    border-color: rgba(223, 223, 223, 1);
+    box-shadow: -2px -3px 5px rgba(223, 223, 223, 1);
+    color: rgba(223, 223, 223, 1);
+}
+
+.navigation:hover {
+    background-color: black;
+    color: #F5F5F7;
+}
+
+/* .navigationContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    margin-right: 1rem;
+} */
+
+.navigationContainer {
+    display: flex;
+    gap: 0.5rem;
+    align-items: sticky;
+    /* margin-right: 1rem; */
+    position: fixed;
+    top: 25%; /* 초기 위치 */
+    left: 1.5rem; /* 초기 위치 */
+    z-index: 1000;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.col4 {
+    flex-grow: 4;
+}
+
+.mx1 {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.w10 {
+    width: 10rem;
+}
